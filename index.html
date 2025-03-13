@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Is It Odd?</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Is It Odd?</h1>
+        <p class="subtitle">Enter a number and discover its true nature</p>
+        
+        <div class="input-group">
+          <input type="number" id="numberInput" placeholder="Enter a number..." />
+          <button class="check-button" id="checkButton">
+            Check
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+
+        <div id="error" class="error"></div>
+        <div id="loading" class="loading hidden">
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+          </svg>
+          Checking number...
+        </div>
+        <div id="result" class="result hidden">
+          <div class="number" id="resultNumber"></div>
+          <div class="state">is <span id="resultState"></span></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 28rem;
+  width: 100%;
+}
+
+.card {
+  background: rgba(30, 41, 59, 0.8);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #e879f9 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(51, 65, 85, 0.8);
+  border: 1px solid rgba(71, 85, 105, 0.8);
+  color: white;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #c084fc;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+.check-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #c084fc;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.check-button:hover {
+  background: #a855f7;
+}
+
+.check-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.arrow-right {
+  transition: transform 0.2s;
+}
+
+.check-button:hover:not(:disabled) .arrow-right {
+  transform: translateX(4px);
+}
+
+.error {
+  color: #ef4444;
+  text-align: center;
+  margin-bottom: 1rem;
+  min-height: 1.5rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: #94a3b8;
+  margin: 2rem 0;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  width: 24px;
+  height: 24px;
+}
+
+.path {
+  stroke: #c084fc;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.result {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition: all 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result.hidden {
+  opacity: 0;
+  transform: translateY(10px);
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.result.even {
+  background: #3b82f6;
+}
+
+.result.odd {
+  background: #a855f7;
+}
+
+.number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.state {
+  font-size: 1.25rem;
+}
+
+.state span {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .check-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
